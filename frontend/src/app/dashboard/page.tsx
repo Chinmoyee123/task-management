@@ -52,7 +52,7 @@ export default function DashboardPage() {
   const handleSearchChange = (val: string) => {
     setSearch(val)
     setPage(1)
-    clearTimeout(debounceRef.current)
+    if (debounceRef.current) clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(() => {
       fetchTasks(val, filter, 1)
     }, 400)
