@@ -24,7 +24,7 @@ export default function DashboardPage() {
   const [editTask, setEditTask] = useState<Task | null>(null)
   const [taskTitle, setTaskTitle] = useState('')
   const [saving, setSaving] = useState(false)
-  const debounceRef = useRef<NodeJS.Timeout>()
+  const debounceRef = useRef<NodeJS.Timeout | null>(null)
 
   const fetchTasks = useCallback(async (s: string, f: string, p: number) => {
     setLoading(true)
